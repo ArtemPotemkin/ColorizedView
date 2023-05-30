@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .systemBlue
     }
-    
+
 
 }
 
