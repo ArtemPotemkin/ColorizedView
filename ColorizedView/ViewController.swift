@@ -26,23 +26,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         colorizedView.layer.cornerRadius = 15
         setupSliders()
+        setupColorizedView()
         
     }
     
     // MARK: - IBActions
     @IBAction func redSliderAction() {
         redValueLabel.text = String(format: "%.2f", redSlider.value)
-//        colorizedView.backgroundColor = UIColor.red.withAlphaComponent(CGFloat(redSlider.value))
+        setupColorizedView()
     }
     
     @IBAction func greenSliderAction() {
         greenValueLabel.text = String(format: "%.2f", greenSlider.value)
-//        colorizedView.backgroundColor = UIColor.green.withAlphaComponent(CGFloat(greenSlider.value))
+        setupColorizedView()
     }
     
     @IBAction func blueSliderAction() {
         blueValueLabel.text = String(format: "%.2f", blueSlider.value)
-//        colorizedView.backgroundColor = UIColor.green.withAlphaComponent(CGFloat(blueSlider.value))
+        setupColorizedView()
     }
     
     // MARK: - Private Methods
@@ -50,6 +51,9 @@ class ViewController: UIViewController {
         redSlider.minimumTrackTintColor = .red
         greenSlider.minimumTrackTintColor = .green
         blueSlider.minimumTrackTintColor = .systemBlue
+    }
+    private func setupColorizedView() {
+        colorizedView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
     }
 
 
