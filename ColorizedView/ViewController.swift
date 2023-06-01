@@ -22,9 +22,13 @@ class ViewController: UIViewController {
     @IBOutlet var blueSlider: UISlider!
     
     
+    fileprivate func extractedFunc() {
+        colorizedView.layer.cornerRadius = 15
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        colorizedView.layer.cornerRadius = 15
+        extractedFunc()
         setupSliders()
         setupValueLabels()
         setupColorizedView()
@@ -54,7 +58,12 @@ class ViewController: UIViewController {
         blueSlider.minimumTrackTintColor = .systemBlue
     }
     private func setupColorizedView() {
-        colorizedView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+        colorizedView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
     }
     private func setupValueLabels() {
         redValueLabel.text = String(format: "%.2f", redSlider.value)
