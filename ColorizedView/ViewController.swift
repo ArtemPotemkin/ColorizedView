@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         colorizedView.layer.cornerRadius = 15
         setupSliders()
+        setupValueLabels()
         setupColorizedView()
         
     }
@@ -54,6 +55,11 @@ class ViewController: UIViewController {
     }
     private func setupColorizedView() {
         colorizedView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+    }
+    private func setupValueLabels() {
+        redValueLabel.text = String(format: "%.2f", redSlider.value)
+        greenValueLabel.text = String(format: "%.2f", greenSlider.value)
+        blueValueLabel.text = String(format: "%.2f", blueSlider.value)
     }
 
 
