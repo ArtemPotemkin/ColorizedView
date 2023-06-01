@@ -22,13 +22,9 @@ class ViewController: UIViewController {
     @IBOutlet var blueSlider: UISlider!
     
     
-    fileprivate func extractedFunc() {
-        colorizedView.layer.cornerRadius = 15
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        extractedFunc()
+        colorizedView.layer.cornerRadius = 15
         setupSliders()
         setupValueLabels()
         setupColorizedView()
@@ -66,11 +62,12 @@ class ViewController: UIViewController {
         )
     }
     private func setupValueLabels() {
-        redValueLabel.text = String(format: "%.2f", redSlider.value)
-        greenValueLabel.text = String(format: "%.2f", greenSlider.value)
-        blueValueLabel.text = String(format: "%.2f", blueSlider.value)
+        redValueLabel.text = string(from: redSlider)
+        greenValueLabel.text = string(from: greenSlider)
+        blueValueLabel.text = string(from: blueSlider)
     }
-
-
+    private func string(from slider: UISlider) -> String {
+        String(format: "%.2f", slider.value)
+    }
 }
 
