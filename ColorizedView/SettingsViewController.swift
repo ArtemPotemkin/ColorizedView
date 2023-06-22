@@ -30,7 +30,6 @@ final class SettingsViewController: UIViewController {
         setupSliders()
         setupValueLabels()
         setupColorizedView()
-        
     }
     
     // MARK: - IBActions
@@ -48,7 +47,6 @@ final class SettingsViewController: UIViewController {
         blueValueLabel.text = String(format: "%.2f", blueSlider.value)
         setupColorizedView()
     }
-    
     
     @IBAction func doneButtonTapped() {
         delegate.setNewBackgroundColor(color: colorizedView.backgroundColor ?? .white)
@@ -87,4 +85,3 @@ final class SettingsViewController: UIViewController {
         String(format: "%.2f", slider.value)
     }
 }
-
