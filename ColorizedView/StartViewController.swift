@@ -19,6 +19,10 @@ class StartViewController: UIViewController {
         settingsVC.color = view.backgroundColor
     }
 
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        guard let settingsVC = segue.source as? SettingsViewController else { return }
+        view.backgroundColor = settingsVC.colorizedView.backgroundColor
+    }
     /*
     // MARK: - Navigation
 

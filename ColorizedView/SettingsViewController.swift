@@ -48,8 +48,6 @@ final class SettingsViewController: UIViewController {
         setupColorizedView()
     }
     
-    @IBAction func doneButtonTapped() {
-    }
     
     // MARK: - Private Methods
     private func setupSliders() {
