@@ -7,8 +7,11 @@
 
 import UIKit
 
-class StartViewController: UIViewController {
+protocol SettingsViewControllerDelegate {
+    func setNewBackgroundColor(color: UIColor)
+}
 
+class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,20 +20,13 @@ class StartViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let settingsVC = segue.destination as? SettingsViewController else { return }
         settingsVC.color = view.backgroundColor
+        settingsVC.delegate = self
     }
+}
 
-    @IBAction func unwind(for segue: UIStoryboardSegue) {
-        guard let settingsVC = segue.source as? SettingsViewController else { return }
-        view.backgroundColor = settingsVC.colorizedView.backgroundColor
+// MARK: - SettingsViewControllerDelegate
+extension StartViewController: SettingsViewControllerDelegate {
+    func setNewBackgroundColor(color: UIColor) {
+        view.backgroundColor = color
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -113,7 +113,7 @@
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="pes-Dl-doV" kind="unwind" unwindAction="unwindFor:" id="dcc-Fg-wb3"/>
+                                    <action selector="doneButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mqo-f0-LbM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -141,7 +141,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="pes-Dl-doV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="831.29770992366412" y="-27.464788732394368"/>
         </scene>
