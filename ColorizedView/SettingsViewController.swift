@@ -8,7 +8,7 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+final class SettingsViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet var colorizedView: UIView!
